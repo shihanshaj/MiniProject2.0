@@ -77,10 +77,6 @@ const Users = mongoose.model("Users", {
 
 // Schema for creating Product
 const Product = mongoose.model("Product", {
-  id: {
-    type: Number,
-    required: true,
-  },
   name: {
     type: String,
     required: true,

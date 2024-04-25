@@ -9,6 +9,7 @@ const LoginSignup = () => {
 
   const changeHandler = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(formData)
   };
 
   const login = async () => {
@@ -48,6 +49,7 @@ const LoginSignup = () => {
     if (dataObj.success) {
       localStorage.setItem('auth-token', dataObj.token);
       localStorage.setItem('user-role', formData.role);
+      console.log(formData.role)
       navigate("/user-types"); // Navigate to UserTypeSelection page
     } else {
       alert(dataObj.errors)

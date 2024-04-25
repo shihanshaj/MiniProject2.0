@@ -5,8 +5,8 @@ import "./UserTypeSelection.css";
 const UserTypeSelection = () => {
   const navigate = useNavigate();
 
-  const handleUserTypeSelection = (userType) => {
-    localStorage.setItem("user-role", userType);
+  const handleUserTypeSelection = () => {
+    const userType = localStorage.getItem("user-role");
     if (userType === "buyer") {
       navigate("/");
     } else if (userType === "seller") {
@@ -23,7 +23,7 @@ const UserTypeSelection = () => {
         <div className="user-type-buttons">
           <div
             className="user-type-button buyer"
-            onClick={() => handleUserTypeSelection("buyer")}
+            onClick={() => handleUserTypeSelection()}
           >
             <i className="fas fa-shopping-cart"></i>
             <h2>Buyer</h2>
@@ -31,7 +31,7 @@ const UserTypeSelection = () => {
           </div>
           <div
             className="user-type-button seller"
-            onClick={() => handleUserTypeSelection("seller")}
+            onClick={() => handleUserTypeSelection()}
           >
             <i className="fas fa-store"></i>
             <h2>Seller</h2>
